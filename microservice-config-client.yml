@@ -1,6 +1,11 @@
+spring:
+   profiles:
+      active: -dev
+---
 server:
   port: 1989
 spring:
+   profiles: dev
    application:
          name: namedev
 eureka:
@@ -9,4 +14,18 @@ eureka:
    instance-id: aa
  client:
    service-url:
-      defaultZone: 
+      defaultZone: http://1989
+---
+server:
+  port: 2018
+spring:
+   profiles: test
+   application:
+         name: namedev
+eureka:
+ instance:
+   hostname: localhost
+   instance-id: aa
+ client:
+   service-url:
+      defaultZone: http://2018
