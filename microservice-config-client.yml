@@ -1,0 +1,12 @@
+server:
+  port: 1989
+spring:
+   application:
+         name: namedev
+eureka:
+ instance:
+   hostname: localhost
+   instance-id: aa
+ client:
+   service-url:
+      defaultZone: 
