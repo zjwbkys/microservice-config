@@ -1,31 +1,26 @@
 spring:
-   profiles:
-      active: -dev
+  profiles:
+    active: 
+    - dev
 ---
 server:
-  port: 1989
+  port: 8201
 spring:
-   profiles: dev
-   application:
-         name: namedev
+  profiles: dev
+  application:
+    name: microservicecloud-config-client
 eureka:
- instance:
-   hostname: localhost
-   instance-id: aa
- client:
-   service-url:
-      defaultZone: http://1989
+  client:
+    service-url: 
+      defaultZone: http://eureka-dev.com:7001/eureka/
 ---
 server:
-  port: 2018
+  port: 8202
 spring:
-   profiles: test
-   application:
-         name: namedev
+  profiles: test
+  application:
+    name: microservicecloud-config-client
 eureka:
- instance:
-   hostname: localhost
-   instance-id: aa
- client:
-   service-url:
-      defaultZone: http://2018
+  client:
+    service-url: 
+      defaultZone: http://eureka-test.com:7001/eureka/
