@@ -1,0 +1,32 @@
+spring:
+  profiles: 
+    active:
+    - dev
+---
+server:
+  port: 7001
+spring:
+  profiles: dev
+  application:
+    name: eurekaserver
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url: http://${eureka.instance.hostname}:${server.port}/eureka/
+---
+server:
+  port: 7001
+spring:
+  profiles: test
+  application:
+    name: eurekaserver
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url: http://${eureka.instance.hostname}:${server.port}/eureka/
